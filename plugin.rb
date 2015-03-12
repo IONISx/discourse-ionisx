@@ -11,7 +11,7 @@ end
 
 class OmniAuth::Strategies::Ionisx < OmniAuth::Strategies::OAuth2
 
-  option :name, "ionisx"
+  option :name, 'ionisx'
 
   option :client_options, {
     :site => SiteSetting.ionisx_site_url,
@@ -45,5 +45,4 @@ auth_provider :title => 'Sign in with IONISx',
     :message => 'Log in using your IONISx account. (Make sure your popup blocker is disabled)',
     :frame_width => 920,
     :frame_height => 800,
-    :authenticator => IonisxAuthenticator.new('ionisx', trusted: true,
-      auto_create_account: true)
+    :authenticator => IonisxAuthenticator.new('ionisx', trusted: true, auto_create_account: true)
