@@ -5,4 +5,4 @@ en:
     login:
       ionisx:
         title: 'with IONISx'
-        message: 'Authenticating with IONISx (make sure pop up blockers are not enabled'
+        message: 'Authenticating with IONISx (make sure pop up blockers are not enabled)'
