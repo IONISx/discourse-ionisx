@@ -1,3 +1,8 @@
+# name: ionisx
+# about: Adds ionisx authentication support to Discourse
+# version: 0.1
+# authors: Franck Chevallereau
+
 require 'auth/oauth2_authenticator'
 require 'omniauth-oauth2'
 
@@ -5,22 +10,22 @@ Rails.application.config.action_dispatch.default_headers.merge!({'X-Frame-Option
 
 class IonisxAuthenticator < ::Auth::OAuth2Authenticator
   def register_middleware(omniauth)
-    omniauth.provider :ionisx, 
-        SiteSetting.ionisx_client_id, 
-        SiteSetting.ionisx_client_secret
+    omniauth.provider :ionisx, :setup => lambda { |env|
+      strategy = env['omniauth.strategy']
+      strategy.options[:client_id] = SiteSetting.ionisx_client_id
+      strategy.options[:client_secret] = SiteSetting.ionisx_client_secret
+      strategy.options[:client_options] = { :site => SiteSetting.ionisx_site_url,
+        :authorize_url => '/oauth2/authorize',
+        :token_url => '/oauth2/token',
+        :userinfo_url => '/api/user/me'
+      }
+    }
   end
 end
 
 class OmniAuth::Strategies::Ionisx < OmniAuth::Strategies::OAuth2
 
   option :name, 'ionisx'
-
-  option :client_options, {
-    :site => SiteSetting.ionisx_site_url,
-    :authorize_url => '/oauth2/authorize',
-    :token_url => '/oauth2/token',
-    :userinfo_url => '/api/user/me'
-  }
 
   uid { raw_info['_id'] }
 
