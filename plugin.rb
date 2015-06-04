@@ -1,6 +1,8 @@
 require 'auth/oauth2_authenticator'
 require 'omniauth-oauth2'
 
+Rails.application.config.action_dispatch.default_headers.merge!({'X-Frame-Options' => 'ALLOWALL'})
+
 class IonisxAuthenticator < ::Auth::OAuth2Authenticator
   def register_middleware(omniauth)
     omniauth.provider :ionisx, 
