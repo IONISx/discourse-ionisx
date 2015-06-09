@@ -1,5 +1,5 @@
 $(function () {
-  $("#site-logo").prop("src", "./images/logo-ionisx.png");
+  $("#site-logo").prop("src", Discourse.SiteSettings.ionisx_logo_url);
   var framed = window.top !== window;
 
   if (framed) {

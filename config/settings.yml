@@ -1,5 +1,9 @@
-login: #set to ionisx to put the category out of /admin/Login
-  ionisx_client_id: ''
-  ionisx_client_secret: ''
-  ionisx_site_url:
-    default :'https://ionisx.com'
+plugins:
+    ionisx_client_id: ''
+    ionisx_client_secret: ''
+    ionisx_site_url:
+      default :'https://ionisx.com'
+    ionisx_logo_url:
+      default: '/images/d-logo-sketch.png'
+    ionisx_logo_small_url:
+      default: '/images/d-logo-sketch-small.png'
