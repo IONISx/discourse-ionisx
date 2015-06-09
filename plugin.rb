@@ -53,3 +53,6 @@ auth_provider :title => 'Sign in with IONISx',
     :frame_width => 920,
     :frame_height => 800,
     :authenticator => IonisxAuthenticator.new('ionisx', trusted: true, auto_create_account: true)
+
+register_asset "javascripts/discourse-ionisx.js"
+
