@@ -5,8 +5,6 @@ en:
     ionisx_client_id: 'Client id for IONISx authentication, registered at http://ionisx.com/'
     ionisx_client_secret: 'Client secret for IONISx authentication, registered at http://ionisx.com/'
     ionisx_site_url: 'URL of the IONISx Website (https://ionisx.com)'
-    ionisx_logo_url: 'URL of the new logo placed in discourse/public/images/'
-    ionisx_logo_small_url: 'URL of the new small logo loca in discourse/public/images/'
     admin:
       site_settings:
         ionisx: 'IONISx'
